@@ -1,0 +1,63 @@
+<!-- {{ miData }} -->
+{% if (miData) %}
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Clase</th>
+                <th scope="col">Area</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipo in miData %}
+            {% with urlEquipo = '/static/assets/fotos_equipos/' %}
+            <tr id="Registro_{{ equipo.id }}">
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ equipo.marca }}</td>
+                <td>{{ equipo.modelo }}</td>
+                <td>{{ equipo.clase }}</td>
+                <td>{{ equipo.area }}</td>
+                <td>
+                    {% if(equipo.foto !="") %}
+                    <img src="{{ urlEquipo }}{{ equipo.foto }}" class="sin_foto_mini" alt="{{ equipo.marca }}">
+                    {% else %}
+                    <img src="{{ urlEquipo }}sin_foto.jpg" class="sin_foto_mini" alt="equipo">
+                    {% endif %}
+                </td>
+                <td width="300">
+                    <span style="display: flex; justify-content:space-between;">
+                        <a href="{{ url_for('viewDetalleEquipo', idEquipo = equipo.id ) }}" type="button"
+                            class="btn btn-warning btn-sm" tooltip="Ver Registro">
+                            <i class="bi bi-eye"></i>
+                            Ver
+                        </a>
+                        <a href="{{ url_for('formViewUpdate', id = equipo.id ) }}" class="btn btn-info btn-sm"
+                            tooltip="Actualizar Registro">
+                            <i class="bi bi-arrow-clockwise"></i>
+                            Actualizar
+                        </a>
+                        <a href="#" id="id_{{ equipo.id }}" data-foto="{{ equipo.foto }}" onclick="eliminarEquipoJavaScript('{{ equipo.id }}');" class="btn btn-danger btn-sm"
+                            tooltip="Eliminar Registro">
+                            <i class="bi bi-trash3"></i>
+                            Eliminar
+                        </a>
+                    </span>
+                </td>
+            </tr>
+            {% endwith %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="row mb-6">
+    <div class="col-md-12">
+        <h3 class="text-center">No hay Equipos</h3>
+    </div>
+</div>
+{% endif %}
