@@ -34,6 +34,10 @@
 
 -- *Boostrap*
 
+*Motor de plantilla:
+
+-- *jinja2
+
 *Base de datos:
 
 -- *SQLITE*
@@ -60,5 +64,83 @@ Una vez instalado todas las dependencia y tener abierto un entorno virtual se de
 
 * Una vez que seas reconocido serás enviado al main donde podrás manejar el sistema de inventario permitiéndote ingresar, modificar, visualizar y eliminar los registro de los equipos
 
-* Tras quedar satisfechos puede cerrar la sesión arriba del navbar para ser direccionado al login
+* Tras quedar satisfechos puede cerrar la sesión arriba del navbar para culminar la sesión ser direccionado al login
+
+# Estrutura
+- bd / *carpeta donde se ubica la base datos*
+-- equipo.sql / *base de datos del sistema*
+
+---
+- conexion / *carpeta donde se ubica la conexion con la base de datos*
+-- conexionDB.py / *archivo que llama y conecta con la base de datos*
+
+---
+ - controller / *carpeta donde el cotrollerEquipo*
+-- controllerEquipo.py / *archivo que maneja las funciones y el manejo de la base de datos*
+
+---
+- static / assets *carpeta donde almacena los recuros como estilos, imagenes, iconos, y javascript*
+- assets / css *carpeta donde se almacena los estilos y el bootstrap*
+-- bootstrap.min.css - tooltip.css / *archivos bootstrap para los estilos*
+-- custom_alert,css *archivo del estilo de las alertas*
+-- style,css *archivo de estilos del sistema*
+
+---
+- assets / fotos_equipos *carpeta donde almacenan las imagenes ingresadas por el usuario*
+- assets / icons *carpeta donde almacena los iconos*
+  
+---
+- assets / js *carpeta donde almacena la función de las alert mediante javascript*
+-- bootstrap.min.js *archivo javascript para bootstrap
+-- alerta.js - loader.js / *archivos de javasscript para ejecutar una alerta*
+  
+---
+- templates / accion *carpeta donde almacena la estructura de la funciones del crud*
+-- add.html *archivo para la estructura del registro*
+-- lista.html *archivo para la estructura de la tablas crud*
+-- update.html *archivo para la estructura de la modificacion de la actualizacion*
+-- view.html *archivo para la estrutura de la visualización detallada del registro*
+
+---
+- templates / inicio *carpeta donde almacena la estructura al ingresa al sistema*
+-- alerta.html *archivo para la estructura de la alerta *
+-- main.html *archivo para la estructura principal al ingresar al sistema*
+-- navbar.html *archivo para la estructura del navbar superior*
+
+---
+- templates / loginregistro *carpeta donde almacena la estructura del login y registro*
+-- login *archivo para la estructura del inicio de sesión del usuario *
+-- register *archivo para la estructura del registro de usuario*
+
+---
+--app.py *archivo principal para ejecutar las rutas del sistema
+
+---
+requirements.txt *archivo con los requerimientos que posee*
+
+---
+.gitignore *archivo que indicara a git que archivo ignorar*
+
+---
+# Entidades base datos equipos
+*Tabla equipos
+| Campo | Tipo | Descripción |
+|---|---|---|
+| id | INTEGER | Clave primaria |
+| usuario_id | INTEGER | FK → usuario(id) |
+| marca | TEXT | Marcas de equipos |
+| modelo | TEXT | Modelo de equipos|
+| clase | Text | Clase o tipo de equipos |
+| area | TEXT | Area que pertenece el equipo |
+| observacion | TEXT | Observación del equipo|
+| revisado | Text | Determina si el equipo fue revisado o no |
+| foto | TEXT | Foto del equipo |
+
+*Tabla usuario
+| Campo | Tipo | Descripción |
+|---|---|---|
+| id | INTEGER | Clave primaria |
+| nombre | Text | Nombre de usuario |
+| clave | TEXT | Clave de usuario |
+
 
