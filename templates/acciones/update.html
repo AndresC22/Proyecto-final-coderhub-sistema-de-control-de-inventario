@@ -1,0 +1,91 @@
+{% extends 'inicio/main.html' %}
+{% block title %}Registrar Equipo{% endblock %}
+
+{% block body %}
+
+
+<section>
+    <h2>
+        <a href="/" class="left" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
+        Actualizar Información del Equipo
+        <hr>
+    </h2>
+
+    {% if (dataInfo) %}
+      <form action="{{ url_for('formActualizarEquipo', idEquipo = dataInfo.id ) }}" method="POST" class="mb-3" autocomplete="off" enctype="multipart/form-data">
+        <input type="text" class="form-control" name="id" value="{{ dataInfo.id }}" required hidden>
+        
+        <div class="row">
+            <div class="col">
+                <label for="marca">Ingresa la marca del equipo</label>
+                <input type="text" name="marca" value="{{ dataInfo.marca }}" class="form-control">
+            </div>
+            <div class="col">
+                <label for="modelo">Ingresa el modelo del equipo</label>
+                <input type="text" name="modelo" value="{{ dataInfo.modelo }}" class="form-control">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="clase">Ingresa la clase o el tipo de equipo</label>
+                <input type="text" name="clase" value="{{ dataInfo.clase }}" class="form-control">
+            </div>
+
+            <div class="col">
+                <label for="area">Ingresa el area que pertenece el equipo</label>
+                <input type="text" name="area" value="{{ dataInfo.area }}" class="form-control">
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col">
+                <label for="observacion">Breve observación del equipo</label>
+                <input type="text" name="observacion" value="{{ dataInfo.observacion }}" class="form-control">
+            </div>
+
+            <div class="col">
+                <label for="revisado">¿El equipo fue revisado?</label>
+                <br><br>
+                <div class="form-check form-check-inline">
+
+                    <input class="form-check-input" type="radio" name="revisado" value="Si" {{ dataInfo.revisado =='Si' and 'checked' or '' }}>
+                    <label class="form-check-label" for="revisado">Si</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="revisado" value="No" {{ 'checked' if dataInfo.revisado =='No' else '' }}>
+                    <label class="form-check-label" for="revisado">No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% set urlEquipo = '/static/assets/fotos_equipos/' %}
+            <div class="col-md-6">
+                {% if(dataInfo.foto !="") %}
+                        <img src="{{ urlEquipo }}{{ dataInfo.foto }}" class="foto_update" alt="{{ dataInfo.marca }}">
+                    {% else %}
+                        <img src="{{ urlEquipo }}sin_foto.jpg" class="foto_update" alt="equipo">
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                <label for="foto">¿Desea cambiar la foto del equipo?</label>
+                <input type="file" name="foto" class="form-control-file" accept="image/*">
+            </div>
+        </div>
+        <hr>
+        <input class="button-primary mt-3 btn btn-info btn-block bold" type="submit" value="Guardar Actualización">
+    </form>
+
+      {% else %}
+      <div class="col-12">
+          <h2 class="text-center">
+              No existe el Equipo
+          </h2>
+      </div>
+{% endif %}
+
+</section>
+
+{% endblock %}
