@@ -1,0 +1,47 @@
+{% extends 'inicio/main.html' %}
+{% block title %}Registrar Equipo{% endblock %}
+
+{% block body %}
+
+
+<section>
+    <h2>
+        <a href="/" class="left" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
+        Detalles del Equipo
+        <hr>
+    </h2>
+
+    {% if (infoEquipo) %}
+    
+    <div class="card" style="width: 25rem;">
+      {% set urlEquipo = '/static/assets/fotos_equipos/' %}
+        {% if(infoEquipo.foto) %}
+          <img src="{{ urlEquipo }}{{ infoEquipo.foto }}" class="card-img-top" alt="equipo">
+        {% else %}
+          <img src="{{ urlEquipo }}sin_foto.jpg" class="card-img-top sin_foto" alt="equipo">
+        {% endif %}
+
+        <div class="card-body">
+          <h5 class="card-title"> <strong>{{ infoEquipo.marca }}</strong></h5>
+        </div>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Modelo: <strong>{{ infoEquipo.modelo }}</strong></li>
+          <li class="list-group-item">clase: <strong>{{ infoEquipo.clase }}</strong></li>
+          <li class="list-group-item">Area: <strong>{{ infoEquipo.area }}</strong></li>
+          <li class="list-group-item">observación: <strong>{{ infoEquipo.observacion }}</strong></li>
+          <li class="list-group-item">Fue revisado: <strong>{{ infoEquipo.revisado }}</strong></li>
+        </ul>
+      </div>
+
+      {% else %}
+      <div class="col-12">
+          <h2 class="text-center">
+              No existe el Equipo
+          </h2>
+      </div>
+{% endif %}
+
+</section>
+
+{% endblock %}
