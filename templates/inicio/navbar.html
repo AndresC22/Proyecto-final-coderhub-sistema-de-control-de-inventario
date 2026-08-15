@@ -1,0 +1,17 @@
+<nav class="navbar bg-primary">
+    <div class="container-fluid">
+        <a href="/" class="navbar-brand">
+            <img class="logo" src="{{ url_for('static', filename ='assets/icons/mantenimiento.png') }}">
+        </a>
+   {% if 'id_usuario' in session %}
+        <div class="d-flex align-items-center">
+            <span class="me-3 fw-bold text-white">
+                Bienvenido, {{ session.get('nombre_usuario', 'Usuario') }}
+            </span>
+            <a href="{{ url_for('logout') }}" class="btn btn-danger btn-sm">
+                Cerrar sesión
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</nav>
