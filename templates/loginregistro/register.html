@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>registro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'assets/css/loginstyle.css')}}">
+</head>
+<body>
+    <main class="page">
+        <section class="card">
+            <header class="card-header">
+                <h1>Registro</h1>
+                <p> Por favor ingrese los siguientes datos.<p>
+            </header>
+           {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="flash">
+                        {% for category, message in messages %}
+                            <!-- Se agrega la categoría a la clase para que puedas darle color en CSS -->
+                            <li class="alerta-{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
+            <form method = "post" class="form">
+                <label>
+                    Usuario
+                    <input type="text" name="nombre" autocomplete="username" required/>
+                </label>
+                 <label>
+                    Clave(Minimo de 5 caracteres)
+                   <input type="password" name="clave" autocomplete="new-password" required/>
+                </label>
+                <button type="submit" class="btn">Crear usuario</button>
+            </form>
+            <p class="helper">¿Posee un usuario? <a href="{{ url_for('login')}}">inicia sesión</a> </p>
+        </section>
+    </main>
+</body>
+</html>
