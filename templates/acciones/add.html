@@ -1,0 +1,69 @@
+{% extends 'inicio/main.html' %}
+{% block title %}Registrar Equipo{% endblock %}
+
+{% block body %}
+
+
+<section>
+    <h2>
+        <a href="/" class="left" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
+        Registrar Nuevo Equipo
+        <hr>
+    </h2>
+
+    <form action="{{ url_for('formAddEquipo') }}" method="POST" class="mb-3" autocomplete="off" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col">
+                <label for="marca">Ingresa la marca del equipo </label>
+                <input type="text" name="marca" class="form-control" required>
+            </div>
+            <div class="col">
+                <label for="modelo">Ingresa el modelo del equipo</label>
+                <input type="text" name="modelo" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="clase">Ingresa la clase o el tipo de equipo</label>
+                <input type="text" name="clase" class="form-control" required>
+            </div>
+            <div class="col">
+                <label for="area">Ingresa el area que pertenece el equipo</label>
+                <input type="text" name="area" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="observacion">Breve observación del equipo</label>
+                 <input type="text" name="observacion" class="form-control" required>
+            </div>
+
+            <div class="col">
+                <label for="revisado">¿El equipo fue revisado?</label>
+                <br><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="revisado" value="Si" checked>
+                    <label class="form-check-label" for="revisado">Si</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="revisado" value="No">
+                    <label class="form-check-label" for="revisado">No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <label for="foto">Ingresa una foto del equipo</label> <br><br>
+                <input type="file" name="foto" class="form-control-file" accept="image/*">
+            </div>
+        </div>
+        <hr>
+
+        <input class="button-primary mt-3 btn btn-info btn-block bold" type="submit" value="Guardar Registro">
+    </form>
+</section>
+
+{% endblock %}
