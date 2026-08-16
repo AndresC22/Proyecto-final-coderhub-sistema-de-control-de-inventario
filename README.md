@@ -130,17 +130,17 @@ requirements.txt *archivo con los requerimientos que posee*
 | usuario_id | INTEGER | FK → usuario(id) |
 | marca | TEXT | Marcas de equipos |
 | modelo | TEXT | Modelo de equipos|
-| clase | Text | Clase o tipo de equipos |
+| clase | TEXT | Clase o tipo de equipos |
 | area | TEXT | Area que pertenece el equipo |
 | observacion | TEXT | Observación del equipo|
-| revisado | Text | Determina si el equipo fue revisado o no |
+| revisado | TEXT | Determina si el equipo fue revisado o no |
 | foto | TEXT | Foto del equipo |
 
 *Tabla usuario
 | Campo | Tipo | Descripción |
 |---|---|---|
 | id | INTEGER | Clave primaria |
-| nombre | Text | Nombre de usuario |
+| nombre | TEXT | Nombre de usuario |
 | clave | TEXT | Clave de usuario |
 
 # Pruebas Realizadas:
