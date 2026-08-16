@@ -143,4 +143,48 @@ requirements.txt *archivo con los requerimientos que posee*
 | nombre | Text | Nombre de usuario |
 | clave | TEXT | Clave de usuario |
 
+# Pruebas Realizadas:
 
+-- Prueba 1: aplicado en (06/08/2026)
+* Integración del main y parte de la estructura principal del crud
+
+-- Prueba 2: aplicado en (07/08/2026)
+* integración de la conexión con la base de datos y la función de registra equipos*
+
+* -- Prueba 3: aplicado en (08/08/2026)
+* integración de la ruta de registro y posterior prueba que parte del registro aparece al hacer registro dentro de la base de datos*
+
+* -- Prueba 4: aplicado en (09/08/2026)
+*integración y pruebas con el add para intentar registrar con el botón de registro y adelantar la función de actualización de registro y su ruta
+
+* -- Prueba 5: aplicado en (10/08/2026)
+  *Integrar la estructura update y su posterior prueba de que actualiza, además de adelantar la funcionen y estructura de la visualización del equipo
+
+* -- Prueba 6: aplicado en (11/08/2026)
+*comprobar la visualización del equipo dentro del crud y realizar la función de eliminar registro para posteriormente verificar su funcionamiento, además de adelantar la elaboración de los estilos css para una mejor presentación
+
+** -- Prueba 8: aplicado en (12/08/2026)
+*mejorar el funcionamiento de la integración de foto para que pueda visualizarse, integración del navbar y mejoras en la estructura y visualización en el front como el agregado de la alerta para notificar
+
+** -- Prueba 9: aplicado en (13/08/2026)
+*integración de la estructura y funcionamiento del login y registro de usuario, además de la función cerrar sesión del usuario y mejorar las validaciones en las funciones del sistema
+
+** -- Prueba 10: aplicado en (14/08/2026)
+*mejoras visuales en el login y registro de equipos, comprobar si hay errores visuales o de funcionamiento en el sistema para solucionarlo
+
+# Manejo correcto y ético de la IA:
+
+-- Ayuda en la estructura del sistema como en las carpetas para mejorar la organización y llamado de los archivos
+-- Documentación e información del alcance del sistema y cumplir con el mvp
+-- Consultas de errores y documentación para usar mejor las funciones y rutas
+-- Consejo de que mejoras se puede agregar a futuro
+
+# Mejoras Futuras:
+
+-- Integrar un buscador en el crud para agilizar la búsqueda de registro en especifico
+-- Tener un método de exportación como pdf para que  pueda ser descargado
+-- Agregar fecha de creación y de modificación de los registro
+-- mejorar los estilos de las validaciones
+
+# Autor:
+-- Realizado por Andres Cambero/Andresc22
