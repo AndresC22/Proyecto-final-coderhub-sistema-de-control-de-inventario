@@ -163,13 +163,13 @@ requirements.txt *archivo con los requerimientos que posee*
 * -- Prueba 6: aplicado en (11/08/2026)
 *comprobar la visualización del equipo dentro del crud y realizar la función de eliminar registro para posteriormente verificar su funcionamiento, además de adelantar la elaboración de los estilos css para una mejor presentación
 
-** -- Prueba 8: aplicado en (12/08/2026)
+** -- Prueba 7: aplicado en (12/08/2026)
 *mejorar el funcionamiento de la integración de foto para que pueda visualizarse, integración del navbar y mejoras en la estructura y visualización en el front como el agregado de la alerta para notificar
 
-** -- Prueba 9: aplicado en (13/08/2026)
+** -- Prueba 8: aplicado en (13/08/2026)
 *integración de la estructura y funcionamiento del login y registro de usuario, además de la función cerrar sesión del usuario y mejorar las validaciones en las funciones del sistema
 
-** -- Prueba 10: aplicado en (14/08/2026)
+** -- Prueba 9: aplicado en (14/08/2026)
 *mejoras visuales en el login y registro de equipos, comprobar si hay errores visuales o de funcionamiento en el sistema para solucionarlo
 
 # Manejo correcto y ético de la IA:
